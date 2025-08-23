@@ -1,0 +1,31 @@
+{
+  "name": "mocha-quickfix-reporter",
+  "version": "1.0.0",
+  "packageManager": "yarn@4.9.2",
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:quickfix": "bash -c 'vi -q <(./node_modules/.bin/eslint --cache . --format unix)'",
+    "test": "yarn lint && yarn test:mocha",
+    "test:mocha": "mocha ./test/**/*.spec.js",
+    "test:quickfix": "mocha --reporter src ./test/**/*.spec.js"
+  },
+  "main": "src/index.js",
+  "keywords": [
+    "mocha",
+    "reporter",
+    "vim",
+    "vi"
+  ],
+  "devDependencies": {
+    "eslint": "8",
+    "mocha": "^11.7.1"
+  },
+  "dependencies": {
+    "acorn": "^8.15.0",
+    "estree-walker": "2"
+  },
+  "volta": {
+    "node": "22.18.0",
+    "yarn": "4.9.3"
+  }
+}
