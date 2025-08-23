@@ -17,6 +17,7 @@
     "vi"
   ],
   "devDependencies": {
+    "chai": "^6.0.1",
     "eslint": "8",
     "mocha": "^11.7.1"
   },

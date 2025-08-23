@@ -241,6 +241,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chai@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "chai@npm:6.0.1"
+  checksum: 10c0/a09f6019b92b471ebbdac7ecb1d8abbfe66a3cfd90c4e8e2e1b6aabddd6c9001e616f6ae9e15e169fefe9af76eb6007b7b6b285564ab62c738aa354177d01948
+  languageName: node
+  linkType: hard
+
 "chalk@npm:^4.0.0, chalk@npm:^4.1.0":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
@@ -887,6 +894,7 @@ __metadata:
   resolution: "mocha-quickfix-reporter@workspace:."
   dependencies:
     acorn: "npm:^8.15.0"
+    chai: "npm:^6.0.1"
     eslint: "npm:8"
     estree-walker: "npm:2"
     mocha: "npm:^11.7.1"

@@ -35,7 +35,7 @@ class MyReporter {
       parts.push(errorDescription);
       append(EFM_PREFIX + parts.join(':'));
     }
-    const appendStack = stack => append('  ' + stack.split('\n').join('  \n'));
+    const appendStack = stack => append('  ' + stack);
 
     runner.on(EVENT_SUITE_BEGIN, suite => {
       this.increaseIndent();
