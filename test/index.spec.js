@@ -18,10 +18,11 @@ describe('mocha-quickfix-reporter', () => {
       execSync('npx --no mocha -- --reporter ./src ./test/e2e-example-tests.js', { env, encoding });
       assert.fail('Tests should have failed.');
     } catch(err) {
-      assert.equal(err.status, 3);
       res = err.stdout.toString();
+      debugConsoleOutput('res', res);
+
+      assert.equal(err.status, 3);
     }
-    debugConsoleOutput('res', res);
 
     // expect
     assert.match(res, regex`
