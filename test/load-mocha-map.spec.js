@@ -17,8 +17,15 @@ describe('loadMochaMap()', () => {
             'should fail in the first block...': { start:20, end:22 },
           }
         },
+        'implicit describes': {
+          'should fail': { start:42, end:44 },
+          'undefined': {},
+          'with an immediate failing test': {
+            'should fail': { start:49, end:51 },
+          },
+        },
         'implicit tests': {},
-        'simple failures': { 'should fail this one': {start: 3, end:  5 } },
+        'simple failures': { 'should fail this one':{ start:3, end:5 } },
       }
     });
   });
