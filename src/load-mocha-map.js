@@ -30,9 +30,16 @@ function parseMochaStructure(sourceCode) {
 
       if(callType === 'describe') {
         const suiteName = node.arguments[0].value;
-        const newSuite = {};
-        describeStack[describeStack.length - 1][suiteName] = newSuite;
-        describeStack.push(newSuite);
+        // Handle duplicate describes by mixing them together.  Shouldn't be a
+        // problem while line numbers of describes are not tracked.
+        if(describeStack[describeStack.length - 1][suiteName]) {
+          const existingSuite = describeStack[describeStack.length - 1][suiteName];
+          describeStack.push(existingSuite);
+        } else {
+          const newSuite = {};
+          describeStack[describeStack.length - 1][suiteName] = newSuite;
+          describeStack.push(newSuite);
+        }
       } else if(callType === 'it') {
         const testName = node.arguments[0].value;
         const testLocation = {

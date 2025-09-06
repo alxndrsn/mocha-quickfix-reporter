@@ -18,7 +18,7 @@ describe('mocha-quickfix-reporter', () => {
       execSync('npx --no mocha -- --reporter ./src ./test/e2e-example-tests.js', { env, encoding });
       assert.fail('Tests should have failed.');
     } catch(err) {
-      assert.equal(err.status, 1);
+      assert.equal(err.status, 3);
       res = err.stdout.toString();
     }
     debugConsoleOutput('res', res);
@@ -28,12 +28,21 @@ describe('mocha-quickfix-reporter', () => {
   example mocha suite with failures
     simple failures
       ⛔ example mocha suite with failures simple failures should fail this one
+    duplicate describe blocks
+      duplicate one
+        ✅ example mocha suite with failures duplicate describe blocks duplicate one should pass in the first block...
+      duplicate one
+        ⛔ example mocha suite with failures duplicate describe blocks duplicate one ...and fail in the second one
+      duplicate two
+        ⛔ example mocha suite with failures duplicate describe blocks duplicate two should fail in the first block...
+      duplicate two
+        ✅ example mocha suite with failures duplicate describe blocks duplicate two ...and pass in the second one
 
   Tests completed.
 
-      Passed: 0
-      Failed: 1
-       Total: 1
+      Passed: 2
+      Failed: 3
+       Total: 5
      Skipped: 0
     Duration: ${/\d+/}ms
 
