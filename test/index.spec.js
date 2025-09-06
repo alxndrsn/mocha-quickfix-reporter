@@ -28,6 +28,15 @@ describe('mocha-quickfix-reporter', () => {
   example mocha suite with failures
     simple failures
       ⛔ example mocha suite with failures simple failures should fail this one
+    duplicate describe blocks
+      duplicate one
+        ✅ example mocha suite with failures duplicate describe blocks duplicate one should pass in the first block...
+      duplicate one
+        ⛔ example mocha suite with failures duplicate describe blocks duplicate one ...and fail in the second one
+      duplicate two
+        ⛔ example mocha suite with failures duplicate describe blocks duplicate two should fail in the first block...
+      duplicate two
+        ✅ example mocha suite with failures duplicate describe blocks duplicate two ...and pass in the second one
 
   Tests completed.
 
