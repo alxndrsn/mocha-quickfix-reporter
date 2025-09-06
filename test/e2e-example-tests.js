@@ -26,4 +26,30 @@ describe('example mocha suite with failures', () => {
       });
     });
   });
+
+  describe('implicit tests', () => {
+    const indirectFailingTest = title => it(title, () => {
+      throw new Error();
+    });
+
+    indirectFailingTest('should fail');
+  });
+
+  describe('implicit describes', () => {
+    const indirectDescribe = (specific, fn) => describe(`something ${specific}`, fn);
+
+    indirectDescribe('with an immediate failing test', () => {
+      it('should fail', () => {
+        throw new Error();
+      });
+    });
+
+    indirectDescribe('with nested describe', () => {
+      describe('with an immediate failing test', () => {
+        it('should fail', () => {
+          throw new Error();
+        });
+      });
+    });
+  });
 });

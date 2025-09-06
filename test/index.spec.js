@@ -21,7 +21,7 @@ describe('mocha-quickfix-reporter', () => {
       res = err.stdout.toString();
       debugConsoleOutput('res', res);
 
-      assert.equal(err.status, 3);
+      assert.equal(err.status, 6);
     }
 
     // expect
@@ -38,12 +38,20 @@ describe('mocha-quickfix-reporter', () => {
         ⛔ example mocha suite with failures duplicate describe blocks duplicate two should fail in the first block...
       duplicate two
         ✅ example mocha suite with failures duplicate describe blocks duplicate two ...and pass in the second one
+    implicit tests
+      ⛔ example mocha suite with failures implicit tests should fail
+    implicit describes
+      something with an immediate failing test
+        ⛔ example mocha suite with failures implicit describes something with an immediate failing test should fail
+      something with nested describe
+        with an immediate failing test
+          ⛔ example mocha suite with failures implicit describes something with nested describe with an immediate failing test should fail
 
   Tests completed.
 
       Passed: 2
-      Failed: 3
-       Total: 5
+      Failed: 6
+       Total: 8
      Skipped: 0
     Duration: ${/\d+/}ms
 
