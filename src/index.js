@@ -129,7 +129,8 @@ function getLineNumber(test, stack, fileMap) {
     path = [];
     for(let curr = test; !curr.root; curr = curr.parent) path.unshift(curr.title);
 
-    const boundaries = path.reduce((map, p) => map[p], fileMap);
+    const boundaries = path.reduce((map, p) => map?.[p], fileMap);
+    if(!boundaries) return 1;
     start = boundaries.start;
     end = boundaries.end;
 
