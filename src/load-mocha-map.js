@@ -5,7 +5,7 @@ const { walk } = require('estree-walker');
 
 const encoding = 'utf8';
 
-module.exports =  function parseFile(filePath) {
+module.exports = function parseFile(filePath) {
   try {
     const sourceText = readFileSync(filePath, { encoding });
     return parseMochaStructure(sourceText);
