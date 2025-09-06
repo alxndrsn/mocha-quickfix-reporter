@@ -46,7 +46,7 @@ function parseMochaStructure(sourceCode) {
           start: node.loc.start.line,
           end:   node.loc.end  .line,
         };
-        describeStack[describeStack.length - 1][testName] = testLocation;
+        if(testName !== undefined) describeStack[describeStack.length - 1][testName] = testLocation;
       }
     },
     leave(node) {
